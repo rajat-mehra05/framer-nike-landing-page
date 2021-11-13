@@ -1,23 +1,34 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { wrapperImage } from "../../variants";
+import { staggerContainer } from "../../variants";
 
 const ImageLayer = () => {
   return (
     <motion.div
-      variants={wrapperImage}
+      variants={staggerContainer}
       initial="initial"
       animate="animate"
-      className="wrapper-picture absolute top-0 left-0 grid w-full text-center place-items-center"
+      className="wrapper-picture absolute top-10 left-64 grid w-full text-center place-items-center"
     >
-      <Image
-        className="h-[400px] w-[250px] md:h-[550px] md:w-[500px] object-contain"
-        src="/images/nike1.png"
-        alt="nike-pic"
-        height="400px"
-        width="400px"
-      />
+      <motion.div
+        animate={{ rotate: [30, 10, 30] }}
+        transition={{
+          duration: 1.6,
+          ease: "linear",
+          repeat: Infinity,
+          type: "spring",
+        }}
+        className="imageWrappe"
+      >
+        <Image
+          className="h-[400px] w-[250px] md:h-[550px] md:w-[500px] object-contain"
+          src="/images/nike1.png"
+          alt="nike-pic"
+          height="400px"
+          width="400px"
+        />
+      </motion.div>
     </motion.div>
   );
 };

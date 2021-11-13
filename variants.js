@@ -24,17 +24,3 @@ export const staggerContainer = {
     },
   },
 };
-
-export const wrapperImage = {
-  initial: {
-    y: -1000,
-  },
-  animate: {
-    y: 0,
-    transition: {
-      delay: 2.6,
-      duration: 0.8,
-      type: "spring",
-    },
-  },
-};
