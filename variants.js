@@ -1,7 +1,7 @@
-export const fadeIn = () => {
+export const fadeIn = (direction = "up") => {
   return {
     initial: {
-      y: 40,
+      y: direction === "up" ? 40 : -60,
       opacity: 0,
     },
     animate: {
@@ -25,7 +25,7 @@ export const staggerContainer = {
   },
 };
 
-export const bottleWrapper = {
+export const wrapperImage = {
   initial: {
     y: -1000,
   },
@@ -37,33 +37,4 @@ export const bottleWrapper = {
       type: "spring",
     },
   },
-};
-
-export const bottle = {
-  initial: {
-    y: 0,
-  },
-  animate: {
-    y: [30, 0, 30],
-    transition: {
-      duration: 1.6,
-      ease: "linear",
-      repeat: Infinity,
-    },
-  },
-};
-
-export const leaf = {
-  initial: {
-    x: 0,
-  },
-  animate: (i) => ({
-    x: [20, 0, 20],
-    transition: {
-      delay: 2,
-      duration: 1 * i,
-      ease: "linear",
-      repeat: Infinity,
-    },
-  }),
 };
